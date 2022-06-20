@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:12
 
 
 # Puppeteer dependencies, from: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
@@ -18,6 +18,6 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
 
 WORKDIR /app
 
-RUN npm install puppeteer
+RUN npm install puppeteer@13.7.0
 
 COPY ./nginx.conf /nginx.conf
